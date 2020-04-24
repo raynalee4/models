@@ -255,7 +255,7 @@ class LaunchBenchmark(base_benchmark_util.BaseBenchmarkUtil):
             os.environ[env_var_name] = str(env_var_dict[env_var_name])
 
         # Run the start script
-        start_script = os.path.join(workspace, "start.sh")
+        start_script = os.path.join(workspace, "start_noinstall.sh")
         self._launch_command(["bash", start_script])
 
     def run_docker_container(self, benchmark_scripts, intelai_models, env_var_dict):

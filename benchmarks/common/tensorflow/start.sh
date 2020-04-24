@@ -18,6 +18,7 @@
 #
 
 #
+source scl_source enable devtoolset-8 rh-python36
 
 echo 'Running with parameters:'
 echo "    USE_CASE: ${USE_CASE}"
@@ -64,7 +65,7 @@ if [[ ${NOINSTALL} != "True" ]]; then
   apt full-upgrade -y
   # Set env var before installs so that user interaction is not required
   export DEBIAN_FRONTEND=noninteractive
-  apt-get install gcc-8 g++-8 cmake python-tk numactl -y
+  apt-get install git gcc-8 g++-8 cmake python-tk numactl -y
   update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 700 --slave /usr/bin/g++ g++ /usr/bin/g++-7
   update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
   apt install -y libsm6 libxext6
